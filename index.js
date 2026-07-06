@@ -7,5 +7,4 @@ const client = new Client({
 client.once(Events.ClientReady, () => {
   console.log("Bot online!");
 });
-
-client.login("MTUyMzc5NjA1Mjk1MDM4NDY1MA.GQyFfy.oRYFckNLVJ39SpyOO1Se9Ai1m2EJ0glz7mpCqg");
+client.login(process.env.TOKEN);
