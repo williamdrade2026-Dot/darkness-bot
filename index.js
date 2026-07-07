@@ -45,6 +45,36 @@ client.on("messageCreate", async (message) => {
     });
   }
 });
+client.on("interactionCreate", async (interaction) => {
+  if (!interaction.isButton()) return;
+
+  if (interaction.customId === "abrir_ticket") {
+
+    const canal = await interaction.guild.channels.create({
+      name: `ticket-${interaction.user.username}`,
+      type: ChannelType.GuildText,
+      permissionOverwrites: [
+        {
+          id: interaction.guild.id,
+          deny: [PermissionsBitField.Flags.ViewChannel],
+        },
+        {
+          id: interaction.user.id,
+          allow: [
+            PermissionsBitField.Flags.ViewChannel,
+            PermissionsBitField.Flags.SendMessages,
+            PermissionsBitField.Flags.ReadMessageHistory,
+          ],
+        },
+      ],
+    });
+
+    await interaction.reply({
+      content: `✅ Seu ticket foi criado: ${canal}`,
+      ephemeral: true,
+    });
+  }
+});
 client.login(process.env.TOKEN);
 
 // Servidor HTTP para o Render
