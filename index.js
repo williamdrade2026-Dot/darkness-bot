@@ -1,4 +1,14 @@
-const { Client, GatewayIntentBits, Events } = require("discord.js");
+const {
+  Client,
+  GatewayIntentBits,
+  Events,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  EmbedBuilder,
+  ChannelType,
+  PermissionsBitField,
+} = require("discord.js");
 const http = require("http");
 
 const client = new Client({
