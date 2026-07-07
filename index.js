@@ -105,6 +105,21 @@ await interaction.reply({
 });
   }
 });
+client.on("interactionCreate", async (interaction) => {
+  if (!interaction.isButton()) return;
+
+  if (interaction.customId === "fechar_ticket") {
+
+    await interaction.reply({
+      content: "🔒 Ticket fechado! O canal será apagado em 5 segundos.",
+    });
+
+    setTimeout(async () => {
+      await interaction.channel.delete().catch(console.error);
+    }, 5000);
+
+  }
+});
 client.login(process.env.TOKEN);
 
 // Servidor HTTP para o Render
