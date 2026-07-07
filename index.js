@@ -22,7 +22,29 @@ const client = new Client({
 client.once(Events.ClientReady, () => {
   console.log(`Bot online!`);
 });
+client.on("messageCreate", async (message) => {
+  if (message.author.bot) return;
 
+  if (message.content === "!painel") {
+
+    const embed = new EmbedBuilder()
+      .setTitle("🎫 Sistema de Tickets")
+      .setDescription("Clique no botão abaixo para abrir um ticket.")
+      .setColor("DarkPurple");
+
+    const botao = new ButtonBuilder()
+      .setCustomId("abrir_ticket")
+      .setLabel("Abrir Ticket")
+      .setStyle(ButtonStyle.Primary);
+
+    const row = new ActionRowBuilder().addComponents(botao);
+
+    await message.channel.send({
+      embeds: [embed],
+      components: [row],
+    });
+  }
+});
 client.login(process.env.TOKEN);
 
 // Servidor HTTP para o Render
