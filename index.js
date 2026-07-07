@@ -49,6 +49,16 @@ client.on("interactionCreate", async (interaction) => {
   if (!interaction.isButton()) return;
 
   if (interaction.customId === "abrir_ticket") {
+    const ticketExistente = interaction.guild.channels.cache.find(
+  (c) => c.name === `ticket-${interaction.user.username}`
+);
+
+if (ticketExistente) {
+  return interaction.reply({
+    content: "❌ Você já possui um ticket aberto!",
+    ephemeral: true,
+  });
+}
 
     const canal = await interaction.guild.channels.create({
       name: `ticket-${interaction.user.username}`,
