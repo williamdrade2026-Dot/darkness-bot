@@ -87,10 +87,22 @@ if (ticketExistente) {
 ],
     });
 
-    await interaction.reply({
-      content: `✅ Seu ticket foi criado: ${canal}`,
-      ephemeral: true,
-    });
+    const fechar = new ButtonBuilder()
+  .setCustomId("fechar_ticket")
+  .setLabel("🔒 Fechar Ticket")
+  .setStyle(ButtonStyle.Danger);
+
+const row = new ActionRowBuilder().addComponents(fechar);
+
+await canal.send({
+  content: `${interaction.user}, seu ticket foi criado! Explique seu problema e aguarde a equipe de suporte.`,
+  components: [row],
+});
+
+await interaction.reply({
+  content: `✅ Seu ticket foi criado: ${canal}`,
+  ephemeral: true,
+});
   }
 });
 client.login(process.env.TOKEN);
