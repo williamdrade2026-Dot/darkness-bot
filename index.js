@@ -77,7 +77,7 @@ if (ticketExistente) {
     ],
   },
   {
-    
+    }
   id: client.user.id,
   allow: [
     PermissionsBitField.Flags.ViewChannel,
