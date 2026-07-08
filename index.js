@@ -66,23 +66,6 @@ if (message.content === "!ativacao") {
     });
 }
 
-    const embed = new EmbedBuilder()
-      .setTitle("🎫 Sistema de Tickets")
-      .setDescription("Clique no botão abaixo para abrir um ticket.")
-      .setColor("DarkPurple");
-
-    const botao = new ButtonBuilder()
-      .setCustomId("abrir_ticket")
-      .setLabel("Abrir Ticket")
-      .setStyle(ButtonStyle.Primary);
-
-    const row = new ActionRowBuilder().addComponents(botao);
-
-    await message.channel.send({
-      embeds: [embed],
-      components: [row],
-    });
-  }
 });
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isButton()) return;
