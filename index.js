@@ -31,6 +31,7 @@ client.on("messageCreate", async (message) => {
       .setTitle("🎫 Sistema de Tickets")
       .setDescription("Clique no botão abaixo para abrir um ticket.")
       .setColor("DarkPurple");
+   .setImage("https://i.postimg.cc/DwBv72Rn/file-00000000d148720eaad76a9c23a42c2c.png");
 
     const botao = new ButtonBuilder()
       .setCustomId("abrir_ticket")
