@@ -26,6 +26,26 @@ client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
 
   if (message.content === "!painel") {
+    if (message.content === "!ativacao") {
+
+  const embed = new EmbedBuilder()
+    .setTitle("🟢 Peça um ADM para ligar o servidor")
+    .setDescription("Abra um ticket e aguarde um membro da equipe.")
+    .setColor("Green")
+    .setImage("https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV-Vanilla-KeyArt.jpg");
+
+  const botao = new ButtonBuilder()
+    .setCustomId("ativacao_ticket")
+    .setLabel("🔌 Pedir")
+    .setStyle(ButtonStyle.Success);
+
+  const row = new ActionRowBuilder().addComponents(botao);
+
+  await message.channel.send({
+    embeds: [embed],
+    components: [row],
+  });
+    }
 
     const embed = new EmbedBuilder()
       .setTitle("🎫 Sistema de Tickets")
@@ -48,7 +68,10 @@ client.on("messageCreate", async (message) => {
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isButton()) return;
 
-  if (interaction.customId === "abrir_ticket") {
+  if (
+  interaction.customId === "abrir_ticket" ||
+  interaction.customId === "ativacao_ticket"
+) {
     const ticketExistente = interaction.guild.channels.cache.find(
   (c) => c.name === `ticket-${interaction.user.username}`
 );
