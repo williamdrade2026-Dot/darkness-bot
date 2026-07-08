@@ -77,14 +77,14 @@ if (ticketExistente) {
     ],
   },
   {
-    }
-  id: client.user.id,
-  allow: [
-    PermissionsBitField.Flags.ViewChannel,
-    PermissionsBitField.Flags.SendMessages,
-    PermissionsBitField.Flags.ReadMessageHistory,
-  ],
-},
+    id: client.user.id,
+    allow: [
+      PermissionsBitField.Flags.ViewChannel,
+      PermissionsBitField.Flags.SendMessages,
+      PermissionsBitField.Flags.ReadMessageHistory,
+    ],
+  },
+  {
     id: "1479667519928139906",
     allow: [
       PermissionsBitField.Flags.ViewChannel,
@@ -93,7 +93,6 @@ if (ticketExistente) {
     ],
   },
 ],
-    });
 
     const fechar = new ButtonBuilder()
   .setCustomId("fechar_ticket")
