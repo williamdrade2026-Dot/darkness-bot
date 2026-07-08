@@ -51,7 +51,7 @@ if (message.content === "!ativacao") {
       .setTitle("🟢 Peça um ADM para ligar o servidor")
       .setDescription("Abra um ticket e aguarde um membro da equipe.")
       .setColor("Green")
-      .setImage("https://cdn.discordapp.com/attachments/1481098880388038707/1524525737674277014/Screenshot_20260708_181719_Google_Play_Store.jpg?ex=6a5010bc&is=6a4ebf3c&hm=e3316ccc444d9b3a96c6ffcdef762968eb8ccb2200a63b6f87ac5c1da8fe5497&");
+      .setImage("https://i.postimg.cc/L4WDJLKP/Screenshot-20260708-181719-Google-Play-Store.jpg");
 
     const botao = new ButtonBuilder()
       .setCustomId("ativacao_ticket")
