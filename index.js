@@ -28,7 +28,7 @@ client.on("messageCreate", async (message) => {
   if (message.content === "!painel") {
 
     const embed = new EmbedBuilder()
-      .setTitle("🎫 Peça ajuda ou dê uma sugestão")
+      .setTitle("🎫 Abra um ticket e espere.")
       .setDescription("Clique no botão abaixo para abrir um ticket.")
       .setColor("DarkPurple")
    .setImage("https://i.postimg.cc/DwBv72Rn/file-00000000d148720eaad76a9c23a42c2c.png");
