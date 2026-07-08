@@ -26,26 +26,45 @@ client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
 
   if (message.content === "!painel") {
-    if (message.content === "!ativacao") {
 
-  const embed = new EmbedBuilder()
-    .setTitle("🟢 Peça um ADM para ligar o servidor")
-    .setDescription("Abra um ticket e aguarde um membro da equipe.")
-    .setColor("Green")
-    .setImage("https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV-Vanilla-KeyArt.jpg");
+    const embed = new EmbedBuilder()
+      .setTitle("🎫 Sistema de Tickets")
+      .setDescription("Clique no botão abaixo para abrir um ticket.")
+      .setColor("DarkPurple");
 
-  const botao = new ButtonBuilder()
-    .setCustomId("ativacao_ticket")
-    .setLabel("🔌 Pedir")
-    .setStyle(ButtonStyle.Success);
+    const botao = new ButtonBuilder()
+      .setCustomId("abrir_ticket")
+      .setLabel("Abrir Ticket")
+      .setStyle(ButtonStyle.Primary);
 
-  const row = new ActionRowBuilder().addComponents(botao);
+    const row = new ActionRowBuilder().addComponents(botao);
 
-  await message.channel.send({
-    embeds: [embed],
-    components: [row],
-  });
-    }
+    await message.channel.send({
+      embeds: [embed],
+      components: [row],
+    });
+}
+
+if (message.content === "!ativacao") {
+
+    const embed = new EmbedBuilder()
+      .setTitle("🟢 Peça um ADM para ligar o servidor")
+      .setDescription("Abra um ticket e aguarde um membro da equipe.")
+      .setColor("Green")
+      .setImage("https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV-Vanilla-KeyArt.jpg");
+
+    const botao = new ButtonBuilder()
+      .setCustomId("ativacao_ticket")
+      .setLabel("🔌 Pedir")
+      .setStyle(ButtonStyle.Success);
+
+    const row = new ActionRowBuilder().addComponents(botao);
+
+    await message.channel.send({
+      embeds: [embed],
+      components: [row],
+    });
+}
 
     const embed = new EmbedBuilder()
       .setTitle("🎫 Sistema de Tickets")
