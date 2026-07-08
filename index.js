@@ -127,8 +127,16 @@ if (ticketExistente) {
 
 const row = new ActionRowBuilder().addComponents(fechar);
 
+let mensagem;
+
+if (interaction.customId === "ativacao_ticket") {
+  mensagem = `${interaction.user}, seu ticket foi criado! Aguarde um ADM.`;
+} else {
+  mensagem = `${interaction.user}, seu ticket foi criado! Explique seu problema e aguarde a equipe de suporte.`;
+}
+
 await canal.send({
-  content: `${interaction.user}, seu ticket foi criado! Explique seu problema e aguarde a equipe de suporte.`,
+  content: mensagem,
   components: [row],
 });
 
