@@ -93,6 +93,7 @@ if (ticketExistente) {
     ],
   },
 ],
+});
 
     const fechar = new ButtonBuilder()
   .setCustomId("fechar_ticket")
