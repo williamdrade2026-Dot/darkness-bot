@@ -49,7 +49,7 @@ client.on("messageCreate", async (message) => {
 if (message.content === "!ativacao") {
 
     const embed = new EmbedBuilder()
-      .setTitle("🟢 Peça um ADM para ligar o servidor")
+      .setTitle("🟢 Peça a um ADM para ligar o servidor")
       .setDescription("Abra um ticket e aguarde um membro da equipe.")
       .setColor("Green")
       .setImage("https://i.postimg.cc/L4WDJLKP/Screenshot-20260708-181719-Google-Play-Store.jpg");
